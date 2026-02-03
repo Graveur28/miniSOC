@@ -1,68 +1,81 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    @apply bg-primary-dark text-text-primary font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   }
-  a:hover {
-    color: #747bff;
+  
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-dark rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-color rounded hover:bg-hover-dark;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card-bg border border-border-color rounded-lg transition-all duration-200 hover:border-low hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 bg-low text-white rounded-lg hover:bg-blue-600 transition-colors font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary-dark text-text-primary border border-border-color rounded-lg hover:bg-hover-dark transition-colors;
+  }
+  
+  .btn-critical {
+    @apply px-4 py-2 bg-critical text-white rounded-lg hover:bg-red-600 transition-colors font-medium;
+  }
+  
+  .input-field {
+    @apply bg-secondary-dark border border-border-color rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:border-low focus:ring-1 focus:ring-low;
+  }
+  
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .severity-critical {
+    @apply bg-critical/20 text-critical;
+  }
+  
+  .severity-high {
+    @apply bg-high/20 text-high;
+  }
+  
+  .severity-medium {
+    @apply bg-medium/20 text-medium;
+  }
+  
+  .severity-low {
+    @apply bg-low/20 text-low;
+  }
+  
+  .severity-safe {
+    @apply bg-safe/20 text-safe;
+  }
+  
+  .status-new {
+    @apply bg-white/20 text-white;
+  }
+  
+  .status-in-progress {
+    @apply bg-low/20 text-low;
+  }
+  
+  .status-resolved {
+    @apply bg-safe/20 text-safe;
   }
 }

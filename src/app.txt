@@ -1,0 +1,38 @@
+mini-soc-dashboard/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Layout/
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Header.jsx
+│   │   │   └── Layout.jsx
+│   │   ├── Dashboard/
+│   │   │   ├── KPICard.jsx
+│   │   │   ├── ActivityChart.jsx
+│   │   │   ├── GeoMap.jsx
+│   │   │   ├── AttackChart.jsx
+│   │   │   └── LogTable.jsx
+│   │   ├── Alerts/
+│   │   │   ├── AlertCard.jsx
+│   │   │   └── AlertsList.jsx
+│   │   ├── Common/
+│   │   │   ├── SeverityBadge.jsx
+│   │   │   ├── StatusBadge.jsx
+│   │   │   └── MetricCard.jsx
+│   │   └── Analysis/
+│   │       ├── IPAnalyzer.jsx
+│   │       └── ThreatIndicator.jsx
+│   ├── pages/
+│   │   ├── Dashboard.jsx
+│   │   ├── Logs.jsx
+│   │   ├── Alerts.jsx
+│   │   ├── Analysis.jsx
+│   │   └── Reports.jsx
+│   ├── data/
+│   │   └── mockData.js
+│   ├── App.jsx
+│   └── index.js
+├── tailwind.config.js
+├── package.json
+└── README.md
